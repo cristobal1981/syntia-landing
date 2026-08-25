@@ -10,10 +10,10 @@ export function Platform() {
     <SectionShell id="plataforma" className="bg-section-dark py-20 md:py-28">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
-          <h2 className="text-3xl font-bold text-balance text-on-dark sm:text-4xl">
+          <h2 className="section-title text-3xl text-on-dark sm:text-4xl">
             {platform.title[0]} <span className="text-primary">{platform.title[1]}</span>
           </h2>
-          <p className="mt-4 max-w-lg text-base leading-relaxed text-pretty text-muted-on-dark sm:text-lg">
+          <p className="section-subtitle mt-4 max-w-lg text-base text-pretty text-muted-on-dark sm:text-lg">
             {platform.subtitle}
           </p>
 

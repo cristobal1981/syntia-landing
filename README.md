@@ -1,6 +1,6 @@
 # Syntia — Landing
 
-Landing page oficial de **Syntia**, la plataforma de gestión digital de [Tena Asesores](https://www.tenaasesores.es).
+Landing page oficial de **Syntia**, la plataforma de gestión digital de [tenaasesores](https://www.tenaasesores.es).
 
 > Stack: **Next.js 16** (App Router) · React 19 · TypeScript · Tailwind CSS 4 · pnpm
 

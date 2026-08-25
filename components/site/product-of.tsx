@@ -6,11 +6,14 @@ type ProductOfProps = {
   className?: string
   /** Text color class for the "Un producto de" label */
   labelClassName?: string
+  /** Override logo asset (e.g. light variant on brisa) */
+  logoSrc?: string
 }
 
 export function ProductOf({
   className,
   labelClassName = "text-primary",
+  logoSrc = site.advisorLogoSrc,
 }: ProductOfProps) {
   return (
     <a
@@ -18,7 +21,7 @@ export function ProductOf({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center justify-center gap-2.5 transition-opacity hover:opacity-90",
+        "inline-flex items-center justify-center gap-1 transition-opacity hover:opacity-90",
         className,
       )}
     >
@@ -26,8 +29,8 @@ export function ProductOf({
         Un producto de
       </span>
       <Image
-        src={site.advisorLogoSrc}
-        alt="Tena Asesores"
+        src={logoSrc}
+        alt="tenaasesores"
         width={site.advisorLogoWidth}
         height={site.advisorLogoHeight}
         className="h-7 w-auto object-contain md:h-8"

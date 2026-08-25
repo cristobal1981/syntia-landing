@@ -22,7 +22,7 @@ const archivo = Archivo({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: 'Syntia | Portal de cliente de Tena Asesores',
+    default: 'Syntia | Portal de cliente de tenaasesores',
     template: '%s | Syntia',
   },
   description: site.description,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     siteName: site.name,
-    title: 'Syntia | Portal de cliente de Tena Asesores',
+    title: 'Syntia | Portal de cliente de tenaasesores',
     description: site.description,
     url: site.url,
     images: [
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Syntia | Portal de cliente de Tena Asesores',
+    title: 'Syntia | Portal de cliente de tenaasesores',
     description: site.description,
     images: ['/brand/syntia-logo_horizontal-positivo.webp'],
   },

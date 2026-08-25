@@ -10,7 +10,7 @@ interface SectionShellProps {
 
 export function SectionShell({ id, className, innerClassName, children }: SectionShellProps) {
   return (
-    <section id={id} className={cn("scroll-mt-24", className)}>
+    <section id={id} className={cn("scroll-mt-16", className)}>
       <div
         className={cn(
           "relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8",

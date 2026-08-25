@@ -2,7 +2,7 @@
   "name": "syntia-landing",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page oficial de Syntia — plataforma de gestión de Tena Asesores",
+  "description": "Landing page oficial de Syntia — plataforma de gestión de tenaasesores",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=20"

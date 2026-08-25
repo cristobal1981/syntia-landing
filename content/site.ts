@@ -9,13 +9,13 @@ export const brand = {
 export const site = {
   name: "Syntia",
   tagline: "Digitaliza. Innova. Crece.",
-  productOf: "Un producto de Tena Asesores",
+  productOf: "Un producto de tenaasesores",
   description:
-    "Syntia es el portal de cliente de Tena Asesores: una capa sobre Odoo que da a cada cliente la información, los documentos y el seguimiento que el portal nativo deja demasiado simples.",
+    "Syntia es el portal de cliente de tenaasesores: una capa sobre Odoo que da a cada cliente la información, los documentos y el seguimiento que el portal nativo deja demasiado simples.",
   url: "https://www.syntia.es",
   appUrl: "https://app.syntia.es",
   advisorUrl: "https://www.tenaasesores.es",
-  advisorLogoSrc: "/brand/tenaasesores-logo.webp",
+  advisorLogoSrc: "/brand/tenaasesores-bg_dark.webp",
   advisorLogoWidth: 320,
   advisorLogoHeight: 64,
   email: "hola@syntia.es",
@@ -27,13 +27,16 @@ export const navItems = [
   { label: "Contacto", href: "#contacto" },
 ] as const
 
+/** CTA del topbar → app.syntia.es */
+export const navCta = "Ir al portal" as const
+
 export const hero = {
   title: {
     prefix: "Tu asesoría,",
     highlight: "en una sola pantalla",
   },
   subtitle:
-    "Syntia no es una herramienta aparte: es el portal de cliente de Tena Asesores, construido sobre Odoo para que veas documentos, trámites y el estado real de tus gestiones con la claridad que el portal estándar no ofrece.",
+    "Syntia no es una herramienta aparte: es el portal de cliente de tenaasesores, construido sobre Odoo para que veas documentos, trámites y el estado real de tus gestiones con la claridad que el portal estándar no ofrece.",
   ctaPrimary: "Acceso a la plataforma",
   ctaSecondary: "Ver cómo funciona",
   browserUrl: "app.syntia.es",
@@ -75,13 +78,13 @@ export const howItWorks = {
   badge: "Cómo funciona",
   title: ["Empezar con Syntia", "es muy sencillo"],
   subtitle:
-    "Solo para clientes de Tena Asesores. Tu asesor te da acceso y, a partir de ahí, gestionas tu espacio desde el portal.",
+    "Solo para clientes de tenaasesores. Tu asesor te da acceso y, a partir de ahí, gestionas tu espacio desde el portal.",
   steps: [
     {
       number: "01",
       title: "Solicitas el alta",
       description:
-        "Pídelo a tu asesor de Tena Asesores. Preparamos tu espacio Syntia con tus datos y lo conectamos a lo que ya gestionamos en Odoo.",
+        "Pídelo a tu asesor de tenaasesores. Preparamos tu espacio Syntia con tus datos y lo conectamos a lo que ya gestionamos en Odoo.",
       cta: { label: "Solicitar alta a tu asesor", href: "https://www.tenaasesores.es" },
     },
     {
@@ -102,14 +105,13 @@ export const howItWorks = {
 export const finalCta = {
   title: "Accede a tu espacio Syntia",
   subtitle:
-    "Syntia es el portal de cliente de Tena Asesores. Si ya eres cliente, entra. Si aún no, solicita el alta a tu asesor y empieza a ver tu asesoría con la claridad que necesitas.",
-  primary: "Acceso a la plataforma",
-  secondary: "Solicitar alta",
+    "Syntia es el portal de cliente de tenaasesores. Si ya eres cliente, entra. Si aún no, solicita el alta a tu asesor y empieza a ver tu asesoría con la claridad que necesitas.",
+  primary: "Solicitar alta",
 } as const
 
 export const footer = {
   description:
-    "Syntia es un producto de Tena Asesores: una capa sobre Odoo pensada para el portal de cliente, con la información y el seguimiento que el portal nativo deja incompletos.",
+    "Syntia es un producto de tenaasesores: una capa sobre Odoo pensada para el portal de cliente, con la información y el seguimiento que el portal nativo deja incompletos.",
   columns: [
     {
       heading: "Plataforma",
@@ -121,7 +123,7 @@ export const footer = {
     {
       heading: "Contacto",
       links: [
-        { label: "Tena Asesores", href: "https://www.tenaasesores.es" },
+        { label: "tenaasesores", href: "https://www.tenaasesores.es" },
         { label: "hola@syntia.es", href: "mailto:hola@syntia.es" },
       ],
     },
