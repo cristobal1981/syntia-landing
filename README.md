@@ -2,6 +2,8 @@
 
 Landing page oficial de **Syntia**, la plataforma de gestión digital de [tenaasesores](https://www.tenaasesores.es).
 
+> Repositorio privado de uso interno. Código, diseño, textos y marca son propiedad de Tena Asesores / Syntia; su uso está restringido a personas autorizadas por escrito según [LICENSE](LICENSE).
+
 > Stack: **Next.js 16** (App Router) · React 19 · TypeScript · Tailwind CSS 4 · pnpm
 
 ## Requisitos
@@ -38,7 +40,7 @@ pnpm build
 pnpm start
 ```
 
-Despliegue recomendado: **Vercel** (importa el repo; el framework se detecta solo). Analytics (`@vercel/analytics`) solo se carga en `NODE_ENV=production`.
+Despliegue: **Vercel**. Analytics (`@vercel/analytics`) solo se carga en `NODE_ENV=production`.
 
 ### Checklist pre-deploy
 
@@ -61,6 +63,8 @@ public/brand/        # Logo, favicons, manifest
 
 Todo el copy editable vive en `content/site.ts` (`site`, `hero`, `platform`, `howItWorks`, `finalCta`, `footer`). Los colores corporativos están documentados en `app/globals.css`.
 
-## Licencia
+## Licencia y propiedad
 
-Propietaria — ver [LICENSE](LICENSE). Todos los derechos reservados.
+Software propietario. **Todos los derechos reservados** © 2026 Tena Asesores / Syntia.
+
+No se concede ninguna licencia al público: queda prohibido copiar, bifurcar (fork), modificar, redistribuir o reutilizar el código, el diseño, los textos o los elementos de marca sin autorización escrita. Ver [LICENSE](LICENSE) para los términos completos.
