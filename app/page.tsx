@@ -1,6 +1,7 @@
 import { Header } from "@/components/site/header"
 import { Hero } from "@/components/site/hero"
 import { Platform } from "@/components/site/platform"
+import { Features } from "@/components/site/features"
 import { HowItWorks } from "@/components/site/how-it-works"
 import { CtaBand } from "@/components/site/cta-band"
 import { Footer } from "@/components/site/footer"
@@ -12,6 +13,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Platform />
+        <Features />
         <HowItWorks />
         <CtaBand />
       </main>
