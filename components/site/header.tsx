@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Link from "next/link"
 import { useLenis } from "lenis/react"
 import { ArrowRight, Menu, X } from "lucide-react"
 import { MarketingButton } from "@/components/ui/marketing-button"
@@ -35,39 +34,39 @@ export function Header() {
 
           <nav className="hidden items-center gap-6 justify-self-center md:flex">
             {navItems.map((item) => (
-              <Link
+              // <a> nativo: Lenis `anchors` intercepta el hash; Next <Link> no scrollea bien.
+              <a
                 key={item.label}
                 href={item.href}
                 className="font-sans text-base font-medium text-muted-on-dark transition-colors hover:text-primary"
               >
                 {item.label}
-              </Link>
+              </a>
             ))}
           </nav>
 
-          <div className="hidden justify-self-end md:block">
+          <div className="flex items-center gap-2 justify-self-end">
             <MarketingButton
               size="sm"
               nativeButton={false}
-              className="h-8 px-3.5 text-xs"
+              className="h-8 px-3 text-xs md:px-3.5"
               render={
                 <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
                   {navCta}
-                  <ArrowRight className="ml-1.5 size-3.5" />
+                  <ArrowRight className="ml-1.5 hidden size-3.5 sm:inline" />
                 </a>
               }
             />
+            <button
+              type="button"
+              className="p-1.5 text-on-dark md:hidden"
+              onClick={() => setIsMenuOpen((prev) => !prev)}
+              aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
           </div>
-
-          <button
-            type="button"
-            className="p-1.5 text-on-dark md:hidden"
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={isMenuOpen}
-          >
-            {isMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-          </button>
         </div>
 
         <div
@@ -79,26 +78,15 @@ export function Header() {
           <div className="min-h-0">
             <nav className="flex flex-col gap-2 py-4">
               {navItems.map((item) => (
-                <Link
+                <a
                   key={item.label}
                   href={item.href}
                   className="py-2 font-sans text-base font-medium text-muted-on-dark transition-colors hover:text-primary"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
-                </Link>
+                </a>
               ))}
-              <MarketingButton
-                size="sm"
-                nativeButton={false}
-                className="mt-2 h-9 w-full text-sm"
-                render={
-                  <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                    {navCta}
-                    <ArrowRight className="ml-1.5 size-3.5" />
-                  </a>
-                }
-              />
             </nav>
           </div>
         </div>

@@ -4,6 +4,9 @@ import { ReactLenis, useLenis } from "lenis/react"
 import { useEffect, type ReactNode } from "react"
 import "lenis/dist/lenis.css"
 
+/** Offset bajo el header fijo al hacer scroll a anclas. */
+export const ANCHOR_OFFSET = -72
+
 function ReducedMotionGuard() {
   const lenis = useLenis()
 
@@ -24,6 +27,29 @@ function ReducedMotionGuard() {
   return null
 }
 
+/** Al cargar / refrescar con #hash, Lenis no scrollea solo: lo hacemos aquí. */
+function HashScrollOnLoad() {
+  const lenis = useLenis()
+
+  useEffect(() => {
+    if (!lenis) return
+
+    const hash = window.location.hash
+    if (!hash || hash.length < 2) return
+
+    const id = decodeURIComponent(hash.slice(1))
+    const el = document.getElementById(id)
+    if (!el) return
+
+    const frame = window.requestAnimationFrame(() => {
+      lenis.scrollTo(el, { offset: ANCHOR_OFFSET, immediate: false })
+    })
+    return () => window.cancelAnimationFrame(frame)
+  }, [lenis])
+
+  return null
+}
+
 export function SmoothScroll({ children }: { children: ReactNode }) {
   return (
     <ReactLenis
@@ -33,10 +59,11 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
         lerp: 0.09,
         duration: 1.2,
         smoothWheel: true,
-        anchors: true,
+        anchors: { offset: ANCHOR_OFFSET },
       }}
     >
       <ReducedMotionGuard />
+      <HashScrollOnLoad />
       {children}
     </ReactLenis>
   )

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react"
 import Image from "next/image"
 import { Lock } from "lucide-react"
 import { brand } from "@/content/site"
@@ -20,6 +21,10 @@ interface BrowserFrameProps {
   aspect?: string
   priority?: boolean
   className?: string
+  /** Live mock (HTML/CSS) rendered inside the window instead of a screenshot */
+  children?: ReactNode
+  /** Accessible description of the mock; its contents are decorative */
+  label?: string
 }
 
 export function BrowserFrame({
@@ -33,6 +38,8 @@ export function BrowserFrame({
   aspect = "aspect-video",
   priority = false,
   className,
+  children,
+  label,
 }: BrowserFrameProps) {
   return (
     <div className={cn("w-full", className)}>
@@ -52,7 +59,15 @@ export function BrowserFrame({
           <div className="w-[42px]" aria-hidden />
         </div>
 
-        {src ? (
+        {children ? (
+          <div
+            role="img"
+            aria-label={label ?? alt ?? screen}
+            className="relative w-full bg-surface-dark select-none"
+          >
+            {children}
+          </div>
+        ) : src ? (
           <div
             className="relative w-full bg-surface-dark"
             style={{ aspectRatio: `${width} / ${height}` }}

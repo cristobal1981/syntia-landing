@@ -1,18 +1,16 @@
 import { ArrowRight } from "lucide-react"
 import { MarketingButton } from "@/components/ui/marketing-button"
 import { SectionShell } from "@/components/site/section-shell"
-import { howItWorks } from "@/content/site"
+import { SappoNudge } from "@/components/site/sappo/sappo-nudge"
+import { howItWorks, site } from "@/content/site"
 import { cn } from "@/lib/utils"
-
-const primaryCta = howItWorks.steps[0].cta
 
 export function HowItWorks() {
   return (
     <SectionShell id="como-funciona" className="bg-section-dark py-24 md:py-32">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="section-title text-[clamp(1.85rem,4vw,2.75rem)] leading-[1.08] text-on-dark">
-          {howItWorks.title[0]}{" "}
-          <span className="text-primary">{howItWorks.title[1]}</span>
+          {howItWorks.title}
         </h2>
         <p className="section-subtitle prose-width mx-auto mt-5 max-w-[52ch] text-base text-pretty text-muted-on-dark sm:text-lg">
           {howItWorks.subtitle}
@@ -62,21 +60,20 @@ export function HowItWorks() {
         })}
       </ol>
 
-      {primaryCta ? (
-        <div className="mt-14 flex justify-center md:mt-16">
-          <MarketingButton
-            size="lg"
-            nativeButton={false}
-            className="h-12 px-8 text-base"
-            render={
-              <a href={primaryCta.href} target="_blank" rel="noopener noreferrer">
-                {primaryCta.label}
-                <ArrowRight className="ml-2 size-4" />
-              </a>
-            }
-          />
-        </div>
-      ) : null}
+      <div className="mt-14 flex flex-col items-center gap-6 md:mt-16 md:gap-8">
+        <SappoNudge />
+        <MarketingButton
+          size="lg"
+          nativeButton={false}
+          className="h-12 px-8 text-base"
+          render={
+            <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
+              {howItWorks.ctaPrimary}
+              <ArrowRight className="ml-2 size-4" />
+            </a>
+          }
+        />
+      </div>
     </SectionShell>
   )
 }

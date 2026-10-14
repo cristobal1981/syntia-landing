@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react"
 import { MarketingButton } from "@/components/ui/marketing-button"
 import { SectionShell } from "@/components/site/section-shell"
 import { ProductOf } from "@/components/site/product-of"
-import { finalCta, site } from "@/content/site"
+import { finalCta } from "@/content/site"
 
 export function CtaBand() {
   return (
@@ -11,7 +11,7 @@ export function CtaBand() {
         <div className="mx-auto max-w-4xl">
           <ProductOf
             labelClassName="text-accent-on-light"
-            logoSrc="/brand/tenaasesores-light.webp"
+            logoSrc="/brand/tenaasesores-black.webp"
           />
           <h2 className="section-cta-brisa-title section-title mt-5">
             {finalCta.title}
@@ -19,18 +19,32 @@ export function CtaBand() {
           <p className="section-cta-brisa-body section-subtitle mx-auto mt-5 mb-10 max-w-[50ch] text-pretty">
             {finalCta.subtitle}
           </p>
-          <MarketingButton
-            size="lg"
-            marketingVariant="brisa"
-            nativeButton={false}
-            className="h-12 px-10 text-base"
-            render={
-              <a href={site.advisorUrl} target="_blank" rel="noopener noreferrer">
-                {finalCta.primary}
-                <ArrowRight className="ml-2 size-4" />
-              </a>
-            }
-          />
+          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <MarketingButton
+              size="lg"
+              marketingVariant="brisa"
+              nativeButton={false}
+              className="h-12 px-10 text-base"
+              render={
+                <a href={finalCta.primaryHref} target="_blank" rel="noopener noreferrer">
+                  {finalCta.primary}
+                  <ArrowRight className="ml-2 size-4" />
+                </a>
+              }
+            />
+            <MarketingButton
+              size="lg"
+              variant="outline"
+              marketingVariant="brisaOutline"
+              nativeButton={false}
+              className="h-12 px-8 text-base"
+              render={
+                <a href={finalCta.secondaryHref} target="_blank" rel="noopener noreferrer">
+                  {finalCta.secondary}
+                </a>
+              }
+            />
+          </div>
         </div>
       </SectionShell>
     </section>

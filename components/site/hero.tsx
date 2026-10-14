@@ -2,22 +2,22 @@ import { ArrowRight } from "lucide-react"
 import { MarketingButton } from "@/components/ui/marketing-button"
 import { SectionShell } from "@/components/site/section-shell"
 import { BrowserFrame } from "@/components/site/browser-frame"
+import { MockInicio } from "@/components/site/mocks"
 import { ProductOf } from "@/components/site/product-of"
 import { hero, site } from "@/content/site"
 
 export function Hero() {
   return (
-    <div className="bg-hero-surface pt-24 pb-16 md:pt-28 md:pb-24">
+    <div className="bg-hero-surface pt-20 pb-10 md:pt-24 md:pb-16">
       <SectionShell>
         <div className="mx-auto max-w-3xl text-center">
           <ProductOf className="mb-1" />
 
-          <h1 className="hero-display-title section-title mx-auto mt-4 mb-5 max-w-3xl leading-[1.1] text-on-dark">
-            {hero.title.prefix}{" "}
-            <span className="text-primary">{hero.title.highlight}</span>
+          <h1 className="hero-display-title section-title mx-auto mt-3 mb-4 max-w-3xl leading-[1.1] text-on-dark">
+            {hero.title}
           </h1>
 
-          <p className="section-subtitle prose-width mx-auto mb-8 max-w-2xl text-base text-pretty text-muted-on-dark sm:text-lg">
+          <p className="section-subtitle prose-width mx-auto mb-6 max-w-2xl text-base text-pretty text-muted-on-dark sm:text-lg">
             {hero.subtitle}
           </p>
 
@@ -25,7 +25,7 @@ export function Hero() {
             <MarketingButton
               size="lg"
               nativeButton={false}
-              className="h-12 px-7 text-base"
+              className="h-11 px-7 text-base md:h-12"
               render={
                 <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
                   {hero.ctaPrimary}
@@ -38,23 +38,22 @@ export function Hero() {
               variant="outline"
               marketingVariant="secondary"
               nativeButton={false}
-              className="h-12 border-agua/50 bg-transparent px-7 text-base"
-              render={<a href="#como-funciona">{hero.ctaSecondary}</a>}
+              className="h-11 border-agua/50 bg-transparent px-7 text-base md:h-12"
+              render={<a href={hero.ctaSecondaryHref}>{hero.ctaSecondary}</a>}
             />
           </div>
+          <p className="mt-3 text-sm text-muted-on-dark">{hero.note}</p>
         </div>
 
-        <div className="mx-auto mt-16 max-w-5xl">
+        <div className="mx-auto mt-8 max-w-5xl md:mt-10">
           <BrowserFrame
             url={hero.browserUrl}
-            src={hero.screenshot}
-            alt={hero.screenshotAlt}
-            width={hero.screenshotWidth}
-            height={hero.screenshotHeight}
+            label={hero.screenshotAlt}
             screen="Inicio"
             stand
-            priority
-          />
+          >
+            <MockInicio size="hero" />
+          </BrowserFrame>
         </div>
       </SectionShell>
     </div>

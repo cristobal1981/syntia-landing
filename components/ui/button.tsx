@@ -14,6 +14,9 @@ export const marketingCtaVariantClassName = {
     'border-on-dark/40 bg-on-dark/5 text-on-dark hover:border-primary/70 hover:bg-primary/14 hover:text-on-dark [a]:hover:bg-primary/14',
   brisa:
     'bg-secondary text-brisa hover:bg-secondary/88 [a]:hover:bg-secondary/88',
+  /** Outline sobre banda brisa (fondo claro) — no reutilizar `brisa` relleno */
+  brisaOutline:
+    'border-agua bg-transparent text-accent-on-light hover:border-agua hover:bg-agua/12 hover:text-accent-on-light [a]:hover:bg-agua/12 [a]:hover:text-accent-on-light',
 } as const
 
 const buttonVariants = cva(
