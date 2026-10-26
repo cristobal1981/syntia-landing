@@ -124,6 +124,8 @@ export function Platform() {
   }, [scenePaused])
 
   useEffect(() => {
+    // La fecha solo se conoce en el cliente: calcularla en el render rompería la hidratación.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPulse(getFiscalPulse(new Date()))
   }, [])
 
